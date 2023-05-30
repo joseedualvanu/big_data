@@ -44,4 +44,5 @@ sdf.groupby(['cyl'])\
 car_counts = sdf.groupby(['cyl'])\
 .agg({"wt": "count"})\
 .sort("count(wt)", ascending=False)\
-.show(5)
+.show(5)    
+
