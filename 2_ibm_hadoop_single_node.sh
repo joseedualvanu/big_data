@@ -1,10 +1,3 @@
-# in the terminal: 
-
-# 1) Download hadoop-3.2.3.tar.gz to your theia environment by running the following command.
-curl https://dlcdn.apache.org/hadoop/common/hadoop-3.2.3/hadoop-3.2.3.tar.gz --output hadoop-3.2.3.tar.gz
-
-# 2) Extract the tar file in the currently directory
-tar -xvf hadoop-3.2.3.tar.gz
 
 # 3) Navigate to the hadoop-3.2.3 directory.
 cd hadoop-3.2.3
