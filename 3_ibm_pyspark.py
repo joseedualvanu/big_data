@@ -87,7 +87,7 @@ spark
 # !curl https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-BD0225EN-SkillsNetwork/labs/data/people.json >> people.json
 
 # Read the dataset into a spark dataframe using the `read.json()` function
-df = spark.read.json("0_private/spark-hadoop/people.json").cache()
+df = spark.read.json("spark-hadoop/people.json").cache()
 
 # Print the dataframe as well as the data schema
 df.show()
@@ -133,7 +133,7 @@ subRDD2 = xrangeRDD2.map(lambda x: x*2)
 # Similar to the people.json file, now read the people2.json file into the notebook, 
 # load it into a dataframe and apply SQL operations to determine the average age in our people2 file.
 # Read the dataset into a spark dataframe using the `read.json()` function
-df2 = spark.read.json("0_private/spark-hadoop/people2.json").cache()
+df2 = spark.read.json("spark-hadoop/people2.json").cache()
 
 df2.show()
 df2.printSchema()

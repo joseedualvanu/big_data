@@ -11,6 +11,6 @@ docker-compose up
 # create submit.py file
 
 # execute python 
-python3 submit.py
+python3 5_submit.py
 
 #http://localhost:8081/
