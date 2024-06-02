@@ -1,18 +1,18 @@
-# Clone the repository to your theia environment.
+# 1) Clone the repository to your environment.
 git clone https://github.com/ibm-developer-skills-network/ooxwv-docker_hadoop.git
 
-# Navigate to the docker-hadoop directory to build it.
+# 2) Navigate to the docker-hadoop directory to build it.
 cd ooxwv-docker_hadoop
 
-# Compose the docker application.
+# 3) Compose the docker application.
 # Compose is a tool for defining and running multi-container Docker applications. 
-# It uses the YAML file to configure the serives and enables us to create and start all the services from just one configurtation file.
+# It uses the YAML file to configure the services and enables us to create and start all the services from just one configurtation file.
 docker-compose up -d
 
-# Run the namenode as a mounted drive on bash.
+# 4) Run the namenode as a mounted drive on bash.
 docker exec -it namenode /bin/bash
 
-# As you have learnt in the videos and reading thus far in the course, a Hadoop environment is configured by editing a set of configuration files:
+# 5)  As you have learnt in the videos and reading thus far in the course, a Hadoop environment is configured by editing a set of configuration files:
 #     hadoop-env.sh Serves as a master file to configure YARN, HDFS, MapReduce, and Hadoop-related project settings.
 #     core-site.xml Defines HDFS and Hadoop core properties
 #     hdfs-site.xml Governs the location for storing node metadata, fsimage file and log file.
@@ -21,15 +21,19 @@ docker exec -it namenode /bin/bash
 # For the docker image, these xml files have been configured already. You can see these in the directory /opt/hadoop-3.2.1/etc/hadoop/ by running
 ls /opt/hadoop-3.2.1/etc/hadoop/*.xml
 
-# In the HDFS, create a directory structure named user/root/input.
+# 6) In the HDFS, create a directory structure named user/root/input.
 hdfs dfs -mkdir -p /user/root/input
-# Copy all the hadoop configuration xml files into the input directory.
+
+# 7) Copy all the hadoop configuration xml files into the input directory.
 hdfs dfs -put $HADOOP_HOME/etc/hadoop/*.xml /user/root/input
-# Create a data.txt file in the current directory.
+
+# 8) Create a data.txt file in the current directory.
 curl https://raw.githubusercontent.com/ibm-developer-skills-network/ooxwv-docker_hadoop/master/SampleMapReduce.txt --output data.txt 
-# Copy the data.txt file into /user/root.
+
+# 9) Copy the data.txt file into /user/root.
 hdfs dfs -put data.txt /user/root/
-# Check if the file has been copied into the HDFS by viewing its content.
+
+# 10) Check if the file has been copied into the HDFS by viewing its content.
 hdfs dfs -cat /user/root/data.txt
 
 # You can see the files in the next local host
