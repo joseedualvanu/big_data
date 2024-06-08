@@ -59,4 +59,4 @@ python3 -m pip install findspark
 # 10) Type in the following command in the terminal to execute the Python script.
 python3 submit.py
 
-#http://localhost:8081/
+#http://localhost:4040/
